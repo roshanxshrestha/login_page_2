@@ -233,7 +233,6 @@ Widget phoneField() {
         child: Icon(Icons.phone),
       ),
     ),
-    obscureText: true,
   );
 }
 
