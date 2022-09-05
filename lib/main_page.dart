@@ -139,19 +139,8 @@ class _OpenPageState extends State<OpenPage> {
                   ],
                 ),
               ),
-              const SizedBox(height: 60),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'request_page');
-                },
-                child: Text(
-                  'SKIP',
-                  style: TextStyle(
-                    fontSize: 17,
-                    color: Colors.grey[800],
-                  ),
-                ),
-              ),
+              const SizedBox(height: 15),
+              skip(context),
             ],
           ),
         ),

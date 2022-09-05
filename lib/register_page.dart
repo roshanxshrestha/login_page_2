@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:login_page_2/widgets.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('images/background2.jpeg'),
+              image: AssetImage('images/background3.jpeg'),
               fit: BoxFit.cover,
             ),
           ),
@@ -32,12 +32,12 @@ class _LoginPageState extends State<LoginPage> {
               ),
               const SizedBox(height: 10),
               pageInfo(
-                  'Sign In',
-                  'Sign in to discover amazing things near around you.',
+                  'Sign Up',
+                  'Sign up to discover amazing things near around you.',
                   context),
               const SizedBox(height: 20),
               Container(
-                height: 300,
+                height: 380,
                 width: 350,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -60,23 +60,19 @@ class _LoginPageState extends State<LoginPage> {
                       width: 300,
                       child: Column(
                         children: [
+                          nameField(),
+                          const SizedBox(height: 15),
                           emailField(),
                           const SizedBox(height: 15),
                           passwordField(),
                           const SizedBox(height: 15),
-                          customButton1('Sign In', 'main_page', context),
-                          TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(context, 'password_reset');
-                            },
-                            child: const Text(
-                              'Forgot Password?',
-                              style: TextStyle(
-                                fontSize: 17,
-                                color: Color.fromARGB(255, 18, 26, 39),
-                              ),
-                            ),
-                          ),
+                          customButton1('Sign Up', 'main_page', context),
+                          const SizedBox(height: 15),
+                          textBox1(
+                              'By signing up you accept our',
+                              'Terms of Services and Privacy Policy',
+                              'privacy_policy',
+                              context),
                         ],
                       ),
                     ),
