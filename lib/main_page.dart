@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:login_page_2/widgets.dart';
 
 class OpenPage extends StatefulWidget {
   const OpenPage({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class _OpenPageState extends State<OpenPage> {
               const SizedBox(height: 80),
               Container(
                 height: 420,
-                width: 325,
+                width: 350,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -72,59 +73,9 @@ class _OpenPageState extends State<OpenPage> {
                       ),
                     ),
                     const SizedBox(height: 40),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, 'login');
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 250,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: const Color.fromARGB(255, 18, 26, 39),
-                          border: Border.all(
-                            color: const Color.fromARGB(255, 18, 26, 39),
-                          ),
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text(
-                            'Sign In',
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontWeight: FontWeight.normal),
-                          ),
-                        ),
-                      ),
-                    ),
+                    customButton1('Sign In', 'login_page', context),
                     const SizedBox(height: 20),
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(context, 'register');
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: 250,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: const Color.fromARGB(255, 18, 26, 39),
-                          ),
-                          color: Colors.white,
-                        ),
-                        child: const Padding(
-                          padding: EdgeInsets.all(12.0),
-                          child: Text(
-                            'Sign Up',
-                            style: TextStyle(
-                                color: Color.fromARGB(255, 18, 26, 39),
-                                fontSize: 20,
-                                fontWeight: FontWeight.normal),
-                          ),
-                        ),
-                      ),
-                    ),
+                    customButton2('Sign Up', 'register_page', context),
                     const SizedBox(height: 40),
                     Row(
                       children: [
@@ -159,7 +110,7 @@ class _OpenPageState extends State<OpenPage> {
                     ),
                     const SizedBox(height: 20),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         IconButton(
                           icon: const FaIcon(FontAwesomeIcons.facebookSquare),
@@ -196,7 +147,6 @@ class _OpenPageState extends State<OpenPage> {
                 child: Text(
                   'SKIP',
                   style: TextStyle(
-                    decoration: TextDecoration.underline,
                     fontSize: 17,
                     color: Colors.grey[800],
                   ),
