@@ -26,12 +26,15 @@ class _GuestPageState extends State<GuestPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Guest Mode',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.yellow[600],
-                  fontWeight: FontWeight.bold,
+              AppBar(
+                backgroundColor: Colors.transparent,
+                title: Text(
+                  'Guest Mode',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.yellow[600],
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
               const SizedBox(height: 15),

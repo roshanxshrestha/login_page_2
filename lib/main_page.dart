@@ -38,7 +38,7 @@ class _OpenPageState extends State<OpenPage> {
               ),
               const SizedBox(height: 80),
               Container(
-                height: 420,
+                height: 320,
                 width: 350,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -76,69 +76,26 @@ class _OpenPageState extends State<OpenPage> {
                     customButton1('Sign In', 'login_page', context),
                     const SizedBox(height: 20),
                     customButton2('Sign Up', 'register_page', context),
-                    const SizedBox(height: 40),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Container(
-                              margin: const EdgeInsets.only(
-                                  left: 10.0, right: 20.0),
-                              child: const Divider(
-                                color: Colors.black,
-                                height: 36,
-                              )),
+                    const SizedBox(height: 15),
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'findaccount');
+                      },
+                      child: const Text(
+                        'Forgot Login ID?',
+                        style: TextStyle(
+                          fontSize: 17,
+                          color: Color.fromARGB(255, 18, 26, 39),
                         ),
-                        const Text(
-                          "Or connect using",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                        Expanded(
-                          child: Container(
-                            margin:
-                                const EdgeInsets.only(left: 20.0, right: 10.0),
-                            child: const Divider(
-                              color: Colors.black,
-                              height: 36,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.facebookSquare),
-                          color: Colors.black,
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.twitterSquare),
-                          color: Colors.black,
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.google),
-                          color: Colors.black,
-                          onPressed: () {},
-                        ),
-                        IconButton(
-                          icon: const FaIcon(FontAwesomeIcons.mobileScreen),
-                          color: Colors.black,
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'mobile');
-                          },
-                        ),
-                      ],
+                      ),
                     ),
                   ],
                 ),
               ),
+              const SizedBox(height: 20),
+              connectUsing(context),
+              const SizedBox(height: 15),
+              container2(context),
               const SizedBox(height: 15),
               skip(context),
             ],

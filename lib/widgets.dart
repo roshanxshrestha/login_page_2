@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_page_2/app_constants.dart';
 
@@ -217,11 +218,15 @@ Widget passwordField() {
 //contact number /phone  field box
 Widget phoneField() {
   return TextFormField(
+    inputFormatters: [
+      LengthLimitingTextInputFormatter(10),
+      FilteringTextInputFormatter.digitsOnly,
+    ],
     keyboardType: TextInputType.phone,
     decoration: InputDecoration(
       fillColor: Colors.white,
       filled: true,
-      hintText: '+977 ',
+      hintText: 'Enter mobile number',
       hintStyle: const TextStyle(
         color: Color.fromARGB(255, 18, 26, 39),
       ),
@@ -308,7 +313,7 @@ Widget container2(BuildContext context) {
           icon: const FaIcon(FontAwesomeIcons.mobileScreen),
           color: Colors.black,
           onPressed: () {
-            Navigator.pushNamed(context, 'mobile');
+            Navigator.pushNamed(context, 'number_login');
           },
         ),
       ],
@@ -328,6 +333,55 @@ Widget skip(BuildContext context) {
         fontSize: 17,
         color: Colors.grey[800],
       ),
+    ),
+  );
+}
+
+//otp field
+Widget otpField(BuildContext context) {
+  return Form(
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        otpContainer(context, 1),
+        otpContainer(context, 2),
+        otpContainer(context, 3),
+        otpContainer(context, 4),
+        otpContainer(context, 5),
+        otpContainer(context, 6),
+      ],
+    ),
+  );
+}
+
+//otp container
+Widget otpContainer(BuildContext context, int boxValue) {
+  return Container(
+    height: 50,
+    width: 42,
+    decoration: BoxDecoration(
+      borderRadius: BorderRadius.circular(10),
+      color: Colors.white,
+      border: Border.all(
+        color: mainColor,
+      ),
+    ),
+    child: TextFormField(
+      onChanged: (value) {
+        if (value.length == 1) {
+          FocusScope.of(context).nextFocus();
+        }
+      },
+      onSaved: (boxValue) {},
+      decoration: const InputDecoration(hintText: "."),
+      style: Theme.of(context).textTheme.headlineSmall,
+      keyboardType: TextInputType.number,
+      textAlign: TextAlign.center,
+      inputFormatters: [
+        LengthLimitingTextInputFormatter(1),
+        FilteringTextInputFormatter.digitsOnly,
+      ],
+      obscureText: false,
     ),
   );
 }
