@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:login_page_2/app_constants.dart';
 import 'package:login_page_2/widgets.dart';
 
 class OpenPage extends StatefulWidget {
@@ -85,7 +86,7 @@ class _OpenPageState extends State<OpenPage> {
                         'Forgot Login ID?',
                         style: TextStyle(
                           fontSize: 17,
-                          color: Color.fromARGB(255, 18, 26, 39),
+                          color: mainColor,
                         ),
                       ),
                     ),
@@ -97,7 +98,7 @@ class _OpenPageState extends State<OpenPage> {
               const SizedBox(height: 15),
               container2(context),
               const SizedBox(height: 15),
-              skip(context),
+              const Skip(),
             ],
           ),
         ),

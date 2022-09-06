@@ -84,7 +84,7 @@ class _RegisterPageState extends State<RegisterPage> {
               const SizedBox(height: 15),
               container2(context),
               const SizedBox(height: 15),
-              skip(context),
+              const Skip(),
             ],
           ),
         ),

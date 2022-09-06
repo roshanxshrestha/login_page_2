@@ -159,7 +159,7 @@ Widget emailField() {
       filled: true,
       hintText: 'Email',
       hintStyle: const TextStyle(
-        color: Color.fromARGB(255, 18, 26, 39),
+        color: mainColor,
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
@@ -182,7 +182,7 @@ Widget nameField() {
       filled: true,
       hintText: 'Full Name',
       hintStyle: const TextStyle(
-        color: Color.fromARGB(255, 18, 26, 39),
+        color: mainColor,
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
@@ -201,7 +201,7 @@ Widget passwordField() {
       filled: true,
       hintText: 'password',
       hintStyle: const TextStyle(
-        color: Color.fromARGB(255, 18, 26, 39),
+        color: mainColor,
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
@@ -228,7 +228,7 @@ Widget phoneField() {
       filled: true,
       hintText: 'Enter mobile number',
       hintStyle: const TextStyle(
-        color: Color.fromARGB(255, 18, 26, 39),
+        color: mainColor,
       ),
       border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(10),
@@ -321,22 +321,6 @@ Widget container2(BuildContext context) {
   );
 }
 
-//skip button
-Widget skip(BuildContext context) {
-  return TextButton(
-    onPressed: () {
-      Navigator.pushNamed(context, 'skip_page');
-    },
-    child: Text(
-      'SKIP',
-      style: TextStyle(
-        fontSize: 17,
-        color: Colors.grey[800],
-      ),
-    ),
-  );
-}
-
 //otp field
 Widget otpField(BuildContext context) {
   return Form(
@@ -384,4 +368,40 @@ Widget otpContainer(BuildContext context, int boxValue) {
       obscureText: false,
     ),
   );
+}
+
+//skip widget with dialog
+class Skip extends StatelessWidget {
+  const Skip({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () => showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text('Are you sure you want to skip login?'),
+          content: const Text(
+              'Sign in to get the most out of us. On continuing you will enter a guest mode.'),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Cancel'),
+              child: const Text('Cancel'),
+            ),
+            TextButton(
+              onPressed: () => Navigator.pushNamed(context, 'guest_page'),
+              child: const Text('Continue'),
+            ),
+          ],
+        ),
+      ),
+      child: Text(
+        'SKIP',
+        style: TextStyle(
+          fontSize: 17,
+          color: Colors.grey[800],
+        ),
+      ),
+    );
+  }
 }

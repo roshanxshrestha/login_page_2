@@ -77,7 +77,7 @@ class _NumberLoginState extends State<NumberLogin> {
               const SizedBox(height: 15),
               container2(context),
               const SizedBox(height: 15),
-              skip(context),
+              const Skip(),
             ],
           ),
         ),

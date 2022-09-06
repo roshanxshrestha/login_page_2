@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 15),
               container2(context),
               const SizedBox(height: 15),
-              skip(context),
+              const Skip(),
             ],
           ),
         ),
