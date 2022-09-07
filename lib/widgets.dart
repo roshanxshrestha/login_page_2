@@ -117,33 +117,33 @@ Widget customButton2(String title, String routeName, BuildContext context) {
 }
 
 //button 3
-Widget customButton3(String title, String routeName, BuildContext context) {
-  return GestureDetector(
-    onTap: () {
-      Navigator.pushNamed(context, routeName);
-    },
-    child: Container(
-      alignment: Alignment.center,
-      width: 300,
-      height: 50,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-        border: Border.all(
-          color: mainColor,
-        ),
-      ),
-      child: Text(
-        title,
-        style: const TextStyle(
-          color: mainColor,
-          fontSize: 20,
-          fontWeight: FontWeight.normal,
-        ),
-      ),
-    ),
-  );
-}
+// Widget customButton3(String title, String routeName, BuildContext context) {
+//   return GestureDetector(
+//     onTap: () {
+//       Navigator.pushNamed(context, routeName);
+//     },
+//     child: Container(
+//       alignment: Alignment.center,
+//       width: 300,
+//       height: 50,
+//       decoration: BoxDecoration(
+//         borderRadius: BorderRadius.circular(10),
+//         color: Colors.white,
+//         border: Border.all(
+//           color: mainColor,
+//         ),
+//       ),
+//       child: Text(
+//         title,
+//         style: const TextStyle(
+//           color: mainColor,
+//           fontSize: 20,
+//           fontWeight: FontWeight.normal,
+//         ),
+//       ),
+//     ),
+//   );
+// }
 
 //input email field
 Widget emailField() {
