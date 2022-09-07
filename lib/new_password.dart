@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:login_page_2/widgets.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+class NewPasswordPage extends StatefulWidget {
+  const NewPasswordPage({Key? key}) : super(key: key);
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<NewPasswordPage> createState() => _NewPasswordPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _NewPasswordPageState extends State<NewPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,13 +31,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 title: Image.asset('images/logo1.png'),
               ),
               const SizedBox(height: 10),
-              pageInfo(
-                  'Sign Up',
-                  'Sign up to discover amazing things near around you.',
-                  context),
-              const SizedBox(height: 20),
+              pageInfo('Create new password',
+                  'Create a new password and proceed login.', context),
+              const SizedBox(height: 55),
               Container(
-                height: 380,
+                height: 265,
                 width: 350,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -52,31 +50,18 @@ class _RegisterPageState extends State<RegisterPage> {
                       width: 300,
                       child: Column(
                         children: [
-                          nameField(),
+                          passwordField('New password'),
                           const SizedBox(height: 15),
-                          emailField(),
+                          passwordField('Confirm new password'),
                           const SizedBox(height: 15),
-                          passwordField('password'),
-                          const SizedBox(height: 15),
-                          customButton1('Sign Up', 'home_page', context),
-                          const SizedBox(height: 15),
-                          textBox1(
-                              'By signing up you accept our',
-                              'Terms of Services and Privacy Policy',
-                              'privacy_policy',
-                              context),
+                          customButton1(
+                              'Update Password', 'changed_password', context),
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
-              connectUsing(context),
-              const SizedBox(height: 15),
-              container2(context),
-              const SizedBox(height: 15),
-              const Skip(),
             ],
           ),
         ),

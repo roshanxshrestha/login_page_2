@@ -40,14 +40,6 @@ class _NumberLoginState extends State<NumberLogin> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.7),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,7 +54,7 @@ class _NumberLoginState extends State<NumberLogin> {
                           const SizedBox(height: 15),
                           otpField(context),
                           const SizedBox(height: 15),
-                          customButton1('Next', 'main_page', context),
+                          customButton1('Next', 'home_page', context),
                           const SizedBox(height: 15),
                           textBox1("Not received OTP?", "Resend", 'resend_otp',
                               context)

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:login_page_2/widgets.dart';
 
 class FindAccount extends StatefulWidget {
@@ -44,14 +42,6 @@ class _FindAccountState extends State<FindAccount> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.7),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:login_page_2/app_constants.dart';
+
 import 'package:login_page_2/widgets.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+class ChangedPassword extends StatefulWidget {
+  const ChangedPassword({Key? key}) : super(key: key);
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<ChangedPassword> createState() => _ChangedPasswordState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _ChangedPasswordState extends State<ChangedPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
         child: Container(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
@@ -28,16 +29,13 @@ class _RegisterPageState extends State<RegisterPage> {
             children: [
               AppBar(
                 backgroundColor: Colors.transparent,
-                title: Image.asset('images/logo1.png'),
+                title: Image.asset(
+                  'images/logo1.png',
+                ),
               ),
-              const SizedBox(height: 10),
-              pageInfo(
-                  'Sign Up',
-                  'Sign up to discover amazing things near around you.',
-                  context),
-              const SizedBox(height: 20),
+              const SizedBox(height: 105),
               Container(
-                height: 380,
+                height: 500,
                 width: 350,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -52,31 +50,34 @@ class _RegisterPageState extends State<RegisterPage> {
                       width: 300,
                       child: Column(
                         children: [
-                          nameField(),
+                          Text(
+                            "Password Changed",
+                            style: TextStyle(
+                              color: Colors.amber[700],
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                           const SizedBox(height: 15),
-                          emailField(),
-                          const SizedBox(height: 15),
-                          passwordField('password'),
-                          const SizedBox(height: 15),
-                          customButton1('Sign Up', 'home_page', context),
-                          const SizedBox(height: 15),
-                          textBox1(
-                              'By signing up you accept our',
-                              'Terms of Services and Privacy Policy',
-                              'privacy_policy',
-                              context),
+                          const Text(
+                            "Congratulations!\nYou've successfully changed your password.",
+                            style: TextStyle(
+                              color: mainColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.normal,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                          const SizedBox(height: 50),
+                          Image.asset('images/tick.png'),
+                          const SizedBox(height: 50),
+                          customButton1("Back to login", "main_page", context),
                         ],
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
-              connectUsing(context),
-              const SizedBox(height: 15),
-              container2(context),
-              const SizedBox(height: 15),
-              const Skip(),
             ],
           ),
         ),

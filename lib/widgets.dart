@@ -192,14 +192,14 @@ Widget nameField() {
 }
 
 //password field box
-Widget passwordField() {
+Widget passwordField(String hintText) {
   return TextFormField(
     keyboardType: TextInputType.emailAddress,
     textInputAction: TextInputAction.next,
     decoration: InputDecoration(
       fillColor: Colors.white,
       filled: true,
-      hintText: 'password',
+      hintText: hintText,
       hintStyle: const TextStyle(
         color: mainColor,
       ),
@@ -282,14 +282,14 @@ Widget container2(BuildContext context) {
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(10),
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.7),
-          spreadRadius: 5,
-          blurRadius: 7,
-          offset: const Offset(0, 5),
-        ),
-      ],
+      // boxShadow: [
+      //   BoxShadow(
+      //     color: Colors.grey.withOpacity(0.7),
+      //     spreadRadius: 5,
+      //     blurRadius: 7,
+      //     offset: const Offset(0, 5),
+      //   ),
+      //],
     ),
     child: Row(
       mainAxisAlignment: MainAxisAlignment.center,

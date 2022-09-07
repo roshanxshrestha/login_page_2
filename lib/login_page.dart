@@ -42,14 +42,6 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.7),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -62,9 +54,9 @@ class _LoginPageState extends State<LoginPage> {
                         children: [
                           emailField(),
                           const SizedBox(height: 15),
-                          passwordField(),
+                          passwordField('password'),
                           const SizedBox(height: 15),
-                          customButton1('Sign In', 'main_page', context),
+                          customButton1('Sign In', 'home_page', context),
                           TextButton(
                             onPressed: () {
                               Navigator.pushNamed(context, 'password_reset');

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:login_page_2/app_constants.dart';
 import 'package:login_page_2/widgets.dart';
 
@@ -44,14 +43,6 @@ class _OpenPageState extends State<OpenPage> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.7),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,

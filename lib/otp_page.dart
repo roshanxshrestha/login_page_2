@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:login_page_2/widgets.dart';
 
-class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+class OtpPage extends StatefulWidget {
+  const OtpPage({Key? key}) : super(key: key);
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<OtpPage> createState() => _OtpPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _OtpPageState extends State<OtpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,12 +32,12 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               const SizedBox(height: 10),
               pageInfo(
-                  'Sign Up',
-                  'Sign up to discover amazing things near around you.',
+                  'Enter OTP',
+                  "Please enter 6 digits otp code sent to your registered email and mobile number.",
                   context),
-              const SizedBox(height: 20),
+              const SizedBox(height: 70),
               Container(
-                height: 380,
+                height: 230,
                 width: 350,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -52,31 +52,18 @@ class _RegisterPageState extends State<RegisterPage> {
                       width: 300,
                       child: Column(
                         children: [
-                          nameField(),
+                          otpField(context),
                           const SizedBox(height: 15),
-                          emailField(),
+                          customButton1('Submit', 'new_password', context),
                           const SizedBox(height: 15),
-                          passwordField('password'),
-                          const SizedBox(height: 15),
-                          customButton1('Sign Up', 'home_page', context),
-                          const SizedBox(height: 15),
-                          textBox1(
-                              'By signing up you accept our',
-                              'Terms of Services and Privacy Policy',
-                              'privacy_policy',
-                              context),
+                          textBox1("Not received OTP?", "Resend", 'resend_otp',
+                              context)
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
-              connectUsing(context),
-              const SizedBox(height: 15),
-              container2(context),
-              const SizedBox(height: 15),
-              const Skip(),
             ],
           ),
         ),

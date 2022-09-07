@@ -41,14 +41,6 @@ class _ResetPasswordState extends State<ResetPassword> {
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.7),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 5),
-                    ),
-                  ],
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -64,7 +56,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                           emailField(),
                           const SizedBox(height: 15),
                           customButton1(
-                              'Recover Password', 'main_page', context),
+                              'Recover Password', 'otp_page', context),
                         ],
                       ),
                     ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:login_page_2/app_constants.dart';
 
-class GuestPage extends StatefulWidget {
-  const GuestPage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<GuestPage> createState() => _GuestPageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _GuestPageState extends State<GuestPage> {
+class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _GuestPageState extends State<GuestPage> {
               AppBar(
                 backgroundColor: accentColor,
                 title: const Text(
-                  'Guest Mode',
+                  'Home Page',
                   style: TextStyle(
                     fontSize: 20,
                     color: mainColor,
@@ -33,7 +33,7 @@ class _GuestPageState extends State<GuestPage> {
               ),
               const SizedBox(height: 15),
               Container(
-                height: 700,
+                height: 750,
                 width: 390,
                 decoration: BoxDecoration(
                   color: accentColor,
@@ -50,18 +50,6 @@ class _GuestPageState extends State<GuestPage> {
                           color: mainColor),
                     ),
                   ],
-                ),
-              ),
-              TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, 'main_page');
-                },
-                child: const Text(
-                  'Sign in / Sign up',
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Colors.blue,
-                  ),
                 ),
               ),
             ],
